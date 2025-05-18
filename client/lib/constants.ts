@@ -1,0 +1,12 @@
+export const ADMISSION_STATUS = {
+  PENDING: "PENDING",
+  APPROVED: "APPROVED",
+  REJECTED: "REJECTED",
+};
+
+export const ROLES = {
+  ADMIN: "ADMIN",
+  TEACHER: "TEACHER",
+  PARENT: "PARENT",
+  STUDENT: "STUDENT",
+};
