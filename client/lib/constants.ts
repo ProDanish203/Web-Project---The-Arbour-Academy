@@ -10,3 +10,9 @@ export const ROLES = {
   PARENT: "PARENT",
   STUDENT: "STUDENT",
 };
+
+export const ATTENDANCE_STATUS = {
+  PRESENT: "PRESENT",
+  ABSENT: "ABSENT",
+  LATE: "LATE",
+};

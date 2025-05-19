@@ -30,7 +30,7 @@ export interface IUser {
   phone?: string;
   address?: string;
   name: string;
-  role: "user" | "admin";
+  role: "USER" | "ADMIN" | "TEACHER" | "PARENT" | "STUDENT";
   avatar?: string;
   hasNotifications: boolean;
   isEmailVerified: boolean;
@@ -81,4 +81,74 @@ export interface Teacher {
   joiningDate: Date;
   employmentType: string;
   salary: number;
+}
+
+export interface AttendanceRecord {
+  studentId: string;
+  status: string;
+  remarks?: string;
+  date?: Date;
+  markedBy?: string;
+}
+
+export interface Student {
+  _id: string;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  gender: string;
+  address: string;
+  admissionDate: string;
+  grade: string;
+  section: string;
+  rollNumber: string;
+  parentId: string;
+  admissionStatus: string;
+  feeStatus: string;
+  avatar: string;
+  emergencyContact: {
+    name: string;
+    relation: string;
+    phone: string;
+  };
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface AttendanceRecord {
+  _id: string;
+  studentId: string;
+  date: string;
+  status: string;
+  markedBy: {
+    _id: string;
+    name: string;
+  };
+  remarks: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface StatusCounts {
+  PRESENT: number;
+  ABSENT: number;
+  LATE: number;
+  HALF_DAY: number;
+  LEAVE: number;
+}
+
+export interface AttendanceStats {
+  total: number;
+  statusCounts: StatusCounts;
+}
+
+export interface StudentAttendanceData {
+  student: Student;
+  attendance: AttendanceRecord[];
+  stats: AttendanceStats;
+}
+
+export interface ParentAttendanceData {
+  children: Student[];
+  attendanceData: StudentAttendanceData[];
 }

@@ -52,3 +52,54 @@ export const AVAILABLE_GRADES = [
 ];
 
 export const AVAILABLE_SECTIONS = ["A", "B", "C", "D"];
+
+export const MOCK_UPCOMING_TESTS = [
+  {
+    id: "1",
+    studentName: "Kamran",
+    subject: "Math Test",
+    date: new Date(Date.now() + 86400000), // Tomorrow
+    grade: "Play-Group",
+    importance: "high",
+  },
+  {
+    id: "2",
+    studentName: "Hassan",
+    subject: "Science Quiz",
+    date: new Date(Date.now() + 86400000 * 4), // 4 days from now (Friday)
+    grade: "Play-Group",
+    importance: "medium",
+  },
+  {
+    id: "3",
+    studentName: "Saima",
+    subject: "English Activity",
+    date: new Date(Date.now() + 86400000 * 6), // 6 days from now
+    grade: "Nursery",
+    importance: "medium",
+  },
+];
+
+export const MOCK_ANNOUNCEMENTS = [
+  {
+    id: "1",
+    title: "Parent-Teacher Meeting",
+    description: "Annual parent-teacher meeting scheduled for next week.",
+    date: new Date(Date.now() + 86400000 * 7), // 7 days from now
+    isNew: true,
+  },
+  {
+    id: "2",
+    title: "School Carnival",
+    description: "Join us for the annual school carnival this weekend.",
+    date: new Date(Date.now() + 86400000 * 3), // 3 days from now
+    isNew: true,
+  },
+  {
+    id: "3",
+    title: "Holiday Announcement",
+    description: "School will be closed for the upcoming national holiday.",
+    date: new Date(Date.now() + 86400000 * 10), // 10 days from now
+    isNew: true,
+  },
+];
