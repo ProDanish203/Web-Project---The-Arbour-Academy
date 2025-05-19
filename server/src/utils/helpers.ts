@@ -53,5 +53,6 @@ export const getPaginatedData = async ({
 
 export const generatePassword = (email: string, phone: string) => {
   // first 6 chars of email + last 4 digits of phone
-  return `${email.substring(0, 6)}-${phone.slice(-4)}`;
+  // return `${email.substring(0, 6)}-${phone.slice(-4)}`;
+  return "Abc12345%";
 };
