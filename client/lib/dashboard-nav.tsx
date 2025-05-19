@@ -1,13 +1,5 @@
 import type React from "react";
-import {
-  BarChart3,
-  BookOpen,
-  Calendar,
-  GraduationCap,
-  Home,
-  Users,
-  Clock,
-} from "lucide-react";
+import { GraduationCap, Home, Users, Clock } from "lucide-react";
 
 export type NavItem = {
   title: string;
@@ -48,11 +40,6 @@ export const teacherNav: DashboardNavConfig = {
       icon: Home,
     },
     {
-      title: "Students",
-      href: "/dashboard/teacher/students",
-      icon: Users,
-    },
-    {
       title: "Attendance",
       href: "/dashboard/teacher/attendance",
       icon: Clock,
@@ -71,16 +58,6 @@ export const parentNav: DashboardNavConfig = {
       title: "My Children",
       href: "/dashboard/parent/children",
       icon: Users,
-    },
-    {
-      title: "Attendance",
-      href: "/dashboard/parent/attendance",
-      icon: Clock,
-    },
-    {
-      title: "Academic Progress",
-      href: "/dashboard/parent/progress",
-      icon: BarChart3,
     },
   ],
 };
