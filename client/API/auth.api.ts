@@ -4,12 +4,12 @@ export const register = async ({
   name,
   email,
   password,
-  role = "user",
+  role = "USER",
 }: {
   email: string;
   password: string;
   name: string;
-  role?: "user" | "admin";
+  role?: "USER" | "ADMIN" | "TEACHER" | "PARENT";
 }) => {
   try {
     const { data } = await api.post("/auth/register", {

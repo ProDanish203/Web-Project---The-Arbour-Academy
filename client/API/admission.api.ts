@@ -59,3 +59,32 @@ export const getAdmissionRequests = async ({
     };
   }
 };
+
+export const reviewAdmissionApplciation = async ({
+  id,
+  formData,
+}: {
+  id: string;
+  formData: any;
+}) => {
+  try {
+    const { data } = await api.put(`/admission/review/${id}`, formData);
+
+    if (data.success) {
+      return {
+        success: true,
+        response: data.data,
+      };
+    } else {
+      return {
+        success: false,
+        response: data.message,
+      };
+    }
+  } catch (error: any) {
+    return {
+      success: false,
+      response: error.response.data.message || "something went wrong",
+    };
+  }
+};
