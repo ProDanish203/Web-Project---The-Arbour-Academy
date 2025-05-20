@@ -7,9 +7,12 @@ export function middleware(request: NextRequest) {
 
   const privatePaths = [
     "/dashboard/admin",
+    "/dashboard/admin/admissions",
+    "/dashboard/admin/teachers",
     "/dashboard/teacher",
+    "/dashboard/teacher/attendance",
     "/dashboard/parent",
-    "/profile",
+    "/dashboard/parent/children",
   ];
   const isPrivatePath = privatePaths.includes(path);
 
@@ -32,8 +35,11 @@ export const config = {
     "/",
     "/admission",
     "/dashboard/admin",
+    "/dashboard/admin/admissions",
+    "/dashboard/admin/teachers",
     "/dashboard/teacher",
+    "/dashboard/teacher/attendance",
     "/dashboard/parent",
-    "/profile",
+    "/dashboard/parent/children",
   ],
 };

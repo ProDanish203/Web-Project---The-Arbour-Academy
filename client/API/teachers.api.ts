@@ -111,3 +111,26 @@ export const removeTeacher = async (id: string) => {
     };
   }
 };
+
+export const getTeacherDashboardData = async () => {
+  try {
+    const { data } = await api.get(`/teachers/dashboard`);
+
+    if (data.success) {
+      return {
+        success: true,
+        response: data.data,
+      };
+    } else {
+      return {
+        success: false,
+        response: data.message,
+      };
+    }
+  } catch (error: any) {
+    return {
+      success: false,
+      response: error?.response?.data?.message || "Something went wrong",
+    };
+  }
+};

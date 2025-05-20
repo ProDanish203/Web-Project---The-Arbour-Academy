@@ -152,3 +152,65 @@ export interface ParentAttendanceData {
   children: Student[];
   attendanceData: StudentAttendanceData[];
 }
+
+export interface Teacher {
+  _id: string;
+  userId: string;
+  designation: string;
+  qualifications: string[];
+  subjects: string[];
+  grades: string[];
+  sections: string[];
+  joiningDate: string;
+  employmentType: string;
+  salary: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface TeacherData {
+  user: User;
+  teacher: Teacher;
+}
+
+export interface ClassSchedule {
+  id: string;
+  subject: string;
+  grade: string;
+  section: string;
+  startTime: string;
+  endTime: string;
+  room: string;
+  day: string;
+  color: string;
+}
+
+export interface Student {
+  id: string;
+  name: string;
+  grade: string;
+  section: string;
+  rollNumber: string;
+  attendance: number;
+  performance: number;
+}
+
+export interface Assignment {
+  id: string;
+  title: string;
+  grade: string;
+  section: string;
+  subject: string;
+  dueDate: string;
+  status: "pending" | "graded" | "overdue";
+  submissionsCount: number;
+  totalStudents: number;
+}
+
+export interface Announcement {
+  id: string;
+  title: string;
+  date: string;
+  content: string;
+  isNew: boolean;
+}
