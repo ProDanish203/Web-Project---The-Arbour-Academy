@@ -284,3 +284,35 @@ export const getAllTeachers = async (
     return next(err);
   }
 };
+
+export const getTeacherDashboardData = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+): Promise<any> => {
+  try {
+    if (!req.user) return next(throwError("Unauthorized Access", 401));
+    if (req.user.role !== ROLES.TEACHER)
+      return next(throwError("Unauthorized Access", 401));
+
+    const teacher = await Teacher.findOne({ userId: req.user._id });
+    if (!teacher) return next(throwError("Teacher not found", 404));
+
+    const user = (await User.findById(teacher.userId)) as unknown as any;
+    if (!user) return next(throwError("User not found", 404));
+
+    return res.status(200).json({
+      success: true,
+      message: "Teacher dashboard data fetched successfully",
+      data: {
+        user: {
+          ...user.toObject(),
+          password: undefined,
+        },
+        teacher,
+      },
+    });
+  } catch (err) {
+    return next(err);
+  }
+};
