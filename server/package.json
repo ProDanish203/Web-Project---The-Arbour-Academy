@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
-    "build": "rimraf dist && npx tsc",
-    "dev": "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\"",
+    "start": "node init && npm run build && node dist/index.js",
+    "build": "node init && rimraf dist && npx tsc",
+    "dev": "node init && npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\"",
     "db:seed": "ts-node src/config/seed.ts"
   },
   "keywords": [],
